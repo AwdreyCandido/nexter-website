@@ -1,0 +1,86 @@
+.realtors{
+    background-color: $color-secondary;
+    grid-column: col-start 7 / full-end ;
+    padding: 3rem;
+
+    display: grid;
+    align-content: center;
+    gap: 3vh;
+    grid-template-columns: 1fr min-content max-content 1fr;
+
+    @media only screen and (max-width: $bp-medium){
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column: 1 / -1;
+        justify-items: center;        
+    }
+
+
+
+    &__heading{
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    &__profile{
+        grid-column: 2 / 4;
+        display: flex;
+        align-items: center;
+
+        @media only screen and (max-width: $bp-medium){
+            &--1{
+                grid-column: 1 / 2;
+            }
+            &--2{
+                grid-column: 2 / 3;
+            }
+            &--3{
+                grid-column: 3 / 4;
+            }
+        }
+
+        @media only screen and (max-width: $bp-small){
+            
+            grid-template-columns: 1fr;
+            grid-column: 2;
+            justify-self: start;
+
+        }
+
+    }
+
+    &__img{
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        margin-right: 1.2rem;
+    }
+
+    &__text{
+        
+        display: grid;
+        grid-template-rows: 2;
+
+        p{
+            font-size: 1rem;
+            color: $color-grey-light-2;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+
+/*
+<div class="realtors">
+<h3 class="heading-3">Top 3 Realtors</h3>
+        <div class="realtors__profile">
+            <img src="img/realtor-2.jpeg" alt="" class="realtors__img">
+            <div class="realtors__text">
+                    <h4 class="heading-4 heading-4--light">Kim Brown</h4>
+                    <p class="realtors__sells">212 Houses sold</p>
+            </div>
+        </div>
+</div>
+
+
+*/
